@@ -1,0 +1,10 @@
+{% extends 'pages/layout.html' %}
+
+{% block title %}
+  <title>Student Information</title>
+{% endblock %}
+
+{% block content %}
+    <h2>{{ student.name }}, {{ student.role }} # {{ student.school_id }}</h2>
+    <p>Age: {{ student.age }} </p>
+{% endblock %}

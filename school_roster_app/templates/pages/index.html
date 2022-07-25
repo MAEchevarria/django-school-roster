@@ -1,0 +1,13 @@
+{% extends 'pages/layout.html' %}
+
+{% block title %}
+  <title>School Page</title>
+{% endblock %}
+
+{% block content %}
+    <h2>{{school_name}} Directory</h2>
+    <ul>
+      <li><a href="{% url 'list-staff' %}">All Staff</a></li>
+      <li><a href="{% url 'list-students' %}">All Students</a></li>
+    </ul>
+{% endblock %}

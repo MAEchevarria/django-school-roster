@@ -1,0 +1,10 @@
+{% extends 'pages/layout.html' %}
+
+{% block title %}
+  <title>Employee Information</title>
+{% endblock %}
+
+{% block content %}
+    <h2>{{ employee.name }}, {{ employee.role }} # {{ employee.employee_id }}</h2>
+    <p>Age: {{ employee.age }} </p>
+{% endblock %}

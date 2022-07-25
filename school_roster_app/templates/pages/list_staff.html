@@ -1,0 +1,14 @@
+{% extends 'pages/layout.html' %}
+
+{% block title %}
+  <title>List of Staff</title>
+{% endblock %}
+
+{% block content %}
+    <h2>{{school_name}} Staff Directory</h2>
+    <ul>
+        {% for staff in staff_list %}
+        <li><a href="{% url 'staff-detail' staff.employee_id %}">{{ staff.name }}</a></li> 
+        {% endfor %}
+    </ul>
+{% endblock %}
