@@ -62,3 +62,6 @@ class School:
             if staff.employee_id == employee_id:
                 return staff
         return None
+
+    def add_student(self, new_student):
+        self.students.append(new_student)

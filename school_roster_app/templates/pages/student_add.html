@@ -1,0 +1,25 @@
+{% extends 'pages/layout.html' %}
+
+{% block title %}
+  <title>Add Student Information</title>
+{% endblock %}
+
+{% block content %}
+<h2>Add Student here</h2>
+<form method="POST">
+    {% csrf_token %}
+    <label for="name">Name:</label>
+    <input type="text" id="student-name" name="name" placeholder="Student name"/>
+    <br>
+    <label for="id">ID:</label>
+    <input type="text" id="student-id" name="id" placeholder="Student id"/>
+    <br>
+    <label for="age">Age:</label>
+    <input type="text" id="student-age" name="age" placeholder="Student age"/>
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" id="student-password" name="password" placeholder="enter password"/>
+    <br>
+    <button type="submit">Add Student</button>
+</form>
+{% endblock %}

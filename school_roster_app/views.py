@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse
 from .models import School, Student, Staff # import our School class
 
 my_school = School("Django School") # create a school instance
@@ -39,3 +39,24 @@ def student_detail(request, student_id):
         "student": student,
     }
     return render(request, "pages/student_detail.html", content)
+
+def student_add(request):
+    if request.method == "POST":
+        print(request.POST)
+
+        input_data = {
+            # key matches students data; value matches form data
+            'name': request.POST['name'],
+            'age': request.POST['age'],
+            'school_id': request.POST['id'],
+            'password': request.POST['password'],
+            'role': 'student',
+        }
+        # creates new student instance
+        new_student = Student(**input_data)
+
+        # update school with new student
+        my_school.add_student(new_student)
+        return redirect(reverse('student-detail', args=[new_student.school_id]))
+
+    return render(request, "pages/student_add.html")

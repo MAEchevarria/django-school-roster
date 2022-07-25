@@ -6,6 +6,11 @@
 
 {% block content %}
     <h2>{{school_name}} Student Directory</h2>
+    <hr>
+    <a href="{% url 'student-add' %}">
+      <button>Add new student</button>
+    </a>
+    <hr>
     <ul>
         {% for student in student_list %}
         <li><a href="{% url 'student-detail' student.school_id %}">{{ student.name }}</a></li> 
